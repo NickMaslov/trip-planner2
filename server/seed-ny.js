@@ -549,7 +549,9 @@ db
   .then(function() {
     console.log("Dropped old data, now inserting data");
     return Promise.map(Object.keys(data), function(name) {
+      console.log("data keysd", Object.keys(data))
       return Promise.map(data[name], function(item) {
+        console.log('to map', item, name)
         return db.model(name).create(item, {
           include: [Place]
         });

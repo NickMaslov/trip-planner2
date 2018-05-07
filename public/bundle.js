@@ -585,24 +585,26 @@ fetch('/api/attractions')
 
 // Get the select dom element
 
-
-
-// use `.value` to get the currently selected value
-// const selectedId = select.value;
-// const selectLH = document.getElementById(`hotels-list`);
-// var option = document.createElement('option')
-//       option.text = selectedId;
-//       selectLH.add(option);
-
-document.getElementById('hotels-add').addEventListener('click', () => {  
-  const li = selectH.options[selectH.selectedIndex].text;
-const ul = document.getElementById(`hotels-list`);
-  ul.appendChild(document.createTextNode(li+',\n'))
-
-
+document.getElementById('hotels-add').addEventListener('click', () => {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(selectH.options[selectH.selectedIndex].text);
+  node.appendChild(textnode);
+ document.getElementById(`hotels-list`).appendChild(node);
 })
 
+document.getElementById('restaurants-add').addEventListener('click', () => {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(selectR.options[selectR.selectedIndex].text);
+  node.appendChild(textnode);
+ document.getElementById(`restaurants-list`).appendChild(node);
+})
 
+document.getElementById('activities-add').addEventListener('click', () => {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(selectA.options[selectA.selectedIndex].text);
+  node.appendChild(textnode);
+ document.getElementById(`activities-list`).appendChild(node);
+})
 
 // const todoItems = ["Buy Milk", "Learn JavaScript", "Plan a Trip"];
 
